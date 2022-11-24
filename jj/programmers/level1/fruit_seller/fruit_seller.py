@@ -1,5 +1,3 @@
-# source: https://school.programmers.co.kr/learn/courses/30/lessons/135808?language=python3
-
 '''
 사과의 상태: 1점부터 k점까지
 
@@ -18,8 +16,7 @@ def solution(k, m, score):
     
     max_num_for_sale = len(score) // m * m
     
-    for i in range(0, len(score), m):
-        if i + m <= len(score):
-            answer += min(score[i:i + m]) * m
+    for i in range(0, max_num_for_sale, m):
+        answer += min(score[i:i + m]) * m
     
     return answer
